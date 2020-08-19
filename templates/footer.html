@@ -1,0 +1,97 @@
+<div id="overlay"><span class="spinner"></span></div>
+
+		<footer id="footer">
+			<div class="inner">
+				<div class="content">
+					<section>
+						<!--Subscription-->
+						<div class="card">
+							<form action="/action_page.php" id="subscribtion-box">
+								<div class="container">
+									<h2>Subscribe to our Weekly Updates!</h2>
+									<p>Stay updated with the latest news, results and education related information updates</p>
+								</div>
+
+								<div class="container" style="background-color:darkred">
+                                    <form id="#sub_box">
+                                    <div id="snackbar">Subscribed</div>
+
+									<input type="text" id="sub_name" placeholder="Full Name" name="name" required>
+									<input type="email" id="sub_email" placeholder="Email address" name="mail" required>
+                                        </form>
+								</div>
+
+								<div class="container">
+									<input type="submit" value="Subscribe">
+								</div>
+							</form>
+						</div>
+					</section>
+
+					<section>
+						<h4>Categories</h4>
+						<ul class="alt">
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Live COVID Counter</a></li>
+							<li><a href="#">Roll Number Slips</a></li>
+							<li><a href="/boardresult">Board Results</a></li>
+							<li><a href="/pairing">Pairing Schemes</a></li>
+							<li><a href="#">Past Papers</a></li>
+							<li><a href="#">9th Notes</a></li>
+							<li><a href="#">10th Notes</a></li>
+							<li><a href="#">11th Notes</a></li>
+							<li><a href="#">12th Notes</a></li>
+                            <li><a href="#">Prize Bonds Checker</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>Admissions | Entry Tests</h4>
+						<ul class="alt">
+                            
+							<li><a href="/datesheets">Date Sheets</a></li>
+							<li><a href="/merit">Merit Calculator</a></li>
+							<li><a href="#">Merit Lists</a></li>
+							<li><a href="/uniresult">BA Result</a></li>
+							<li><a href="#">MCAT</a></li>
+							<li><a href="#">NET</a></li>
+							<li><a href="#">ECAT</a></li>
+						</ul>
+					</section>
+
+
+				</div>
+				<div class="copyright" style="font-size: 20px; color: darkgray">
+					&copy; All Rights Reserved | 2020 | <a href="https://www.pakresult.com/" style="color: white; font-size: 23px">PakResult.com</a>
+				</div>
+			</div>
+		</footer>
+        <script>
+ $("#sub_box").submit(function (e) {
+        loading_on()
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            data: {
+                name: $("#sub_name").val(),
+                email: $("#sub_email").val(),
+
+
+                csrfmiddlewaretoken: "{{ csrf_token }}",
+                action: 'post'
+            },
+            success: function (data) {
+                $("#sub_name").val("");
+                $("#sub_email").val("");
+                loading_off();
+                 var x = document.getElementById("snackbar");
+
+                x.className = "show";
+
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+            },
+        });
+        return false;
+    });
+        </script>
