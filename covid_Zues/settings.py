@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '&i1rffb(3=1t*1i%bv9kc^x$g)uz^rw_4@!9tee)&xcn6j%wa5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['zues-covid.herokuapp.com','localhost','127.0.0.1','coronavirus.pakresult.com']
 
