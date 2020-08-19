@@ -4,7 +4,6 @@ from django.views.generic import RedirectView
 from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
-    path('', RedirectView.as_view(url='home/')),
-    path('home/', views.homepage, name='homepage' ),
+    path('', views.homepage, name='homepage' ),
 
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
