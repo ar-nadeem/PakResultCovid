@@ -26,7 +26,7 @@ SECRET_KEY = '&i1rffb(3=1t*1i%bv9kc^x$g)uz^rw_4@!9tee)&xcn6j%wa5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['zues-covid.herokuapp.com','localhost','127.0.0.1','coronavirus.pakresult.com']
+ALLOWED_HOSTS = ['zues-covid.herokuapp.com/home','localhost','127.0.0.1','coronavirus.pakresult.com']
 
 
 # Application definition
@@ -118,13 +118,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    BASE_DIR / 'static',
-)
-STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
     BASE_DIR / 'static',
 )
 STATICFILES_FINDERS = (
@@ -132,3 +132,4 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     # django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+STATIC_URL = '/static/'
