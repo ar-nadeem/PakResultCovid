@@ -4,9 +4,9 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="icon" href="{% static '/images/icon.png' %}" style="width: 50%">
-		<link rel="stylesheet" href="{% static '/css/main.css' %}" />
-        <link rel="stylesheet" href="{% static '/css/custom-written.css' %}" />
+        <link rel="icon" href="{% static '../static/images/icon.png' %}" style="width: 50%">
+		<link rel="stylesheet" href="{% static '../static/css/main.css' %}" />
+        <link rel="stylesheet" href="{% static '../static/css/custom-written.css' %}" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
         <title>Coronavirus Updates Pakistan COVID-19 Live Cases Stats</title>
 		<meta charset="utf-8" />
@@ -44,20 +44,23 @@
 	#corona-table tr td{
 		border: 1px solid #ccc;
 		padding: 5px;
+        color: #F0F9E2;
 	}
 	#clone thead th, #corona-table thead th{
 		text-align: left;
 		border: 1px solid #ccc;
-		background-color: #39F;
+		background-color: #3D3D3D;
 		padding: 2px;
 		color: white;
 		font-weight: bold;
+        text-align: center;
 	}
 
 	#corona-table1{
 		width: 100%;
 		border-collapse: collapse;
 		margin-bottom: 20px;
+        color: #F0F9E2;
 	}
 	#corona-table1 tr{
 	}
@@ -68,10 +71,11 @@
 	#clone thead th, #corona-table1 thead th{
 		text-align: left;
 		border: 1px solid #ccc;
-		background-color: #39F;
+		background-color: #3D3D3D;
 		padding: 5px;
 		color: white;
 		font-weight: bold;
+        text-align: center;
 	}
 
 
@@ -87,10 +91,10 @@
 		color: white;
 	}
 	.new_cases{
-		background-color: #FFEEAA;
+		background-color: darkred;
 	}
 	.recovered{
-		background-color: #EAF7D5;
+		background-color: darkgreen;
 	}
 	.recovered_w_deaths{
 		background-color: #F1F1F1;
@@ -202,18 +206,21 @@
 		}
 
 	}
+        hr.new1 {
+  border-top: 1px dashed gray;
+}
+
 </style>
 
 <body class="is-preload">
 
 	<!-- Header -->
 		<header id="header">
-			<a class="logo" href="/home" style="font-family: Times New Roman, Times, serif; font-size: 25px"> &#8226;  Pak Result.com  &#8226;</a>
-
-			<nav>
-				<a href="#menu" style="font-size: 18px">Menu</a>
-			</nav>
-		</header>
+               <a class="logo" href="https://www.pakresult.com/" style="font-family: Times New Roman, Times, serif; font-size: 22px">Pak Result.com </a>
+               <nav>
+                   <a href="#menu" style="font-size: 18px">Menu</a>
+               </nav>
+           </header>
 
 	<!-- Nav -->
         {% include "navbar.html" %}
@@ -229,7 +236,7 @@
 	<!-- Highlights -->
 		<section class="wrapper">
             
-            <div class="inner" style="text-align: center"><h2>Navigation</h2>
+            <div class="inner" style="text-align: center"><h2><a class="fa fa-compass"></a> Navigation</h2><hr class="new1">
                <a class="button primary" href="#pakistan" style="font-size: 25px">Pakistan COVID Stats</a><br><br>
                 <a class="button" href="#global" style="font-size: 25px">World Wide COVID Stats</a><br><br>
                 <a class="button primary" href="#prevention" style="font-size: 25px">Prevention</a><br><br>
@@ -242,21 +249,21 @@
     
     
       <!--pakistani Stats-->
-        <section class="wrapper" id="pakistan">
+        <section class="wrapper" id="pakistan" style="height: 105vh">
             <div class="inner">
                     <div class="content">
-                        <hr><h1>CORONAVIRUS CASES IN PAKISTAN</h1><hr>
+                        <hr><h1>Coronavirus Cases In Pakistan</h1><hr>
                         {{ pak_stats|safe }}
                         </div>
             </div>
-            </div>
+          
         </section>
 
 	<!-- CTA -->
 		<section id="cta" class="wrapper">
             <div class="inner">
 		    {{ pak_table|safe }}
-            </div>
+            </div><h3>PakResult.com</h3>
 	</section>
 </section>
 
@@ -275,9 +282,9 @@
                 </section>
 	<!-- CTA -->
 		<section id="cta" class="wrapper">
-			<div class="inner">
+			<div class="inner" style="overflow-x:auto; border: 1px solid white">
 				{{ global_table|safe }}
-            </div>
+            </div><h3>PakResult.com</h3>
 	</section><br><br>
     
     
@@ -335,7 +342,7 @@
                             </ol>
                         </div>
                         
-                    </div><hr><br>
+                    </div><hr><h3>PakResult.com</h3><br>
                     
                     
                     
