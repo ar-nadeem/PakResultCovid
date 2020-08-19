@@ -156,6 +156,8 @@
 		width: 48%;
 		border: 1px solid #ccc;
 		box-sizing: border-box;
+        background: rgb(241,241,241);
+background: linear-gradient(0deg, rgba(241,241,241,1) 0%, rgba(241,241,241,1) 35%, rgba(231,150,150,1) 100%);
 	}
 	.box1{
 		margin-right: 2%;
@@ -238,7 +240,7 @@
             
             <div class="inner" style="text-align: center"><h2><a class="fa fa-compass"></a> Navigation</h2><hr class="new1">
                <a class="button primary" href="#pakistan" style="font-size: 25px">Pakistan COVID Stats</a><br><br>
-                <a class="button" href="#global" style="font-size: 25px">World Wide COVID Stats</a><br><br>
+                <a class="button" href="#global" style="font-size: 25px">WorldWide COVID Stats</a><br><br>
                 <a class="button primary" href="#prevention" style="font-size: 25px">Prevention</a><br><br>
                 <a class="button" href="#symptoms" style="font-size: 25px">Symptoms</a>
                 </div>
@@ -260,7 +262,7 @@
         </section>
 
 	<!-- CTA -->
-		<section id="cta" class="wrapper">
+		<section id="cta" class="wrapper" style="z-index: -10">
             <div class="inner">
 		    {{ pak_table|safe }}
             </div><h3>PakResult.com</h3>
